@@ -1,8 +1,8 @@
 import sys
 from pathlib import Path
 
-from Bio.Align import PairwiseAligner  # pyright: ignore[reportMissingImports]
-from Bio.Align import substitution_matrices  # pyright: ignore[reportMissingImports]
+from Bio.Align import PairwiseAligner  
+from Bio.Align import substitution_matrices  
 
 sys.path.insert(
     0,
@@ -10,13 +10,12 @@ sys.path.insert(
 )
 
 import importlib
+    
 
-# Import the tested module via importlib so static analyzers are less likely
-# to report a missing import for the local src/alignment_tool module.
 try:
     alignment_mod = importlib.import_module("alignment_tool")
 except Exception:
-    # ensure src is on path (kept for runtime when running tests)
+    
     sys.path.insert(
         0,
         str(Path(__file__).parents[1] / "src"),

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-# pyright: reportMissingModuleSource=false
+
 import matplotlib.pyplot as plt
 import pandas as pd
 

@@ -4,15 +4,15 @@ import sys
 import time
 from pathlib import Path
 
-from Bio.Align import PairwiseAligner  # type: ignore[reportMissingImports]
-from Bio.Align import substitution_matrices  # type: ignore[reportMissingImports]
+from Bio.Align import PairwiseAligner  
+from Bio.Align import substitution_matrices  
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 SRC_DIR = PROJECT_ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from alignment_tool import align_affine  # type: ignore[reportMissingImports]
+from alignment_tool import align_affine  
 
 
 def ensure_results_dir():
