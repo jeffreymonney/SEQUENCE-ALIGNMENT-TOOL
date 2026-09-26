@@ -2,18 +2,18 @@ import sys
 from pathlib import Path
 
 try:
-    import matplotlib.pyplot as plt  # type: ignore[import-untyped]
-except (ModuleNotFoundError, ImportError):  # pragma: no cover
+    import matplotlib.pyplot as plt  
+except (ModuleNotFoundError, ImportError):  
     plt = None
 
 try:
-    from Bio.Align import substitution_matrices  # type: ignore[import-untyped]
-except (ModuleNotFoundError, ImportError):  # pragma: no cover
+    from Bio.Align import substitution_matrices  
+except (ModuleNotFoundError, ImportError):  
     substitution_matrices = None
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from alignment_tool import align_affine  # pyright: ignore[reportMissingImports]
+from alignment_tool import align_affine  
 
 
 def ensure_results_dir():
